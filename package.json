@@ -1,0 +1,70 @@
+{
+  "name": "datame",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start": "npm audit fix & node server.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.19",
+    "express": "^4.16.4",
+    "i": "^0.3.6",
+    "image-to-base64": "2.0.1",
+    "jspdf": "^1.5.3",
+    "jwt-decode": "^2.2.0",
+    "npm": "^6.9.0",
+    "particles.js": "^2.0.0",
+    "vue": "^2.6.8",
+    "vue-axios": "^2.1.4",
+    "vue-cookie-accept-decline": "^5.2.3",
+    "vue-cookies": "^1.5.12",
+    "vue-google-charts": "^0.3.2",
+    "vue-i18n": "^8.0.0",
+    "vue-router": "^3.0.2",
+    "vue-sweetalert2": "^1.6.4"
+  },
+  "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.7.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-cli-plugin-i18n": "^0.5.2",
+    "vue-particles": "^1.0.9",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
