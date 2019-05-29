@@ -173,7 +173,7 @@ export default {
     this.$i18n.locale = lang;
 
     this.$http
-      .get("https://api4-datame.herokuapp.com/api/v1/submit", {
+      .get("http://localhost:8000/api/v1/submit", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -182,7 +182,7 @@ export default {
       });
 
     this.$http
-      .get("https://api4-datame.herokuapp.com/api/v3/data/get_user_reviews", {
+      .get("http://localhost:8000/api/v3/data/get_user_reviews", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -222,7 +222,7 @@ export default {
       formData.append("comments", this.reviewForm.comments);
       formData.append("reviewedId", this.reviewForm.reviewedId);
       this.$http
-        .post("https://api4-datame.herokuapp.com/api/v3/data/create_review", formData, {
+        .post("http://localhost:8000/api/v3/data/create_review", formData, {
           headers: { Authorization: token }
         })
         .then(result => {
@@ -257,14 +257,14 @@ export default {
       var token = "JWT " + this.$cookies.get("token");
       const formData = new FormData();
 
-      if (this.selected == "Accepted") {
+      if (this.selected == this.$t('accepted')) {
         formData.append("status", "AC");
       } else {
         formData.append("status", "RE");
       }
       formData.append("submitId", id);
       this.$http
-        .post("https://api4-datame.herokuapp.com/api/v1/change_status", formData, {
+        .post("http://localhost:8000/api/v1/change_status", formData, {
           headers: { Authorization: token }
         })
         .then(result => {

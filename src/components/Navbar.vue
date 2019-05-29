@@ -85,7 +85,7 @@ export default {
        if (this.getCookie("token")) {
         var token = 'JWT ' + this.$cookies.get('token')
 
-        this.$http.get('https://api4-datame.herokuapp.com/api/v3/unvieweds',{ headers:
+        this.$http.get('http://localhost:8000/api/v3/unvieweds',{ headers:
         { Authorization: token }
         }).then((result) => {
 

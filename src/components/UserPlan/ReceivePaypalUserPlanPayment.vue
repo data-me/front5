@@ -40,7 +40,7 @@
             var payerID = paypal_response[2].split("=")[1];
             this.wasPaymenetAccepted = true;
 
-            processPaypalUserPlanPaymentUrl = 'https://api4-datame.herokuapp.com/api/v1/pagos/accept_paypal_userPlan_payment?paymentId=' + paymentId +
+            processPaypalUserPlanPaymentUrl = 'http://localhost:8000/api/v1/pagos/accept_paypal_userPlan_payment?paymentId=' + paymentId +
             '&token=' + token_paypal + '&PayerID=' + payerID;
 
             this.$http.get(processPaypalUserPlanPaymentUrl, { headers: { Authorization: token } })
@@ -69,7 +69,7 @@
             title: this.$t('success_payment'),
             text: this.$t('thank_you')
         }).then(result =>{
-              window.location.href = 'https://data-me.herokuapp.com/user_plan.html';
+              window.location.href = 'http://localhost:8080/user_plan.html';
               this.$cookies.set("ads", "false");
             });
     },
@@ -82,7 +82,7 @@
             title: this.$t('error_payment'),
             text: this.$t('error_upgrade')
         }).then(result =>{
-              window.location.href = 'https://data-me.herokuapp.com/user_plan.html';
+              window.location.href = 'http://localhost:8080/user_plan.html';
             });
     }
   }

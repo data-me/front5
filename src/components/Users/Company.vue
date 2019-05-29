@@ -35,13 +35,14 @@ export default {
       var token = "JWT " + this.$cookies.get("token");
       const formData = new FormData();
       formData.append("user_id", user_id);
-      this.$bvModal.msgBoxConfirm(text), {
+      this.$bvModal.msgBoxConfirm(text, {
            okTitle:this.$t('accept'),
            cancelTitle:this.$t('cancel')
-         }.then(value => {
-        if(value === true){
+         })
+         .then(value => {
+        if(true === true){
           this.$http
-            .post(" https://api4-datame.herokuapp.com/api/v2/delete_user", formData, {
+            .post(" http://localhost:8000/api/v2/delete_user", formData, {
               headers: { Authorization: token }
             })
             .then(result => {

@@ -88,7 +88,7 @@ export default {
     
     var token = "JWT " + this.$cookies.get("token");
     this.$http
-      .get("https://api4-datame.herokuapp.com/api/v2/admin/offers", {
+      .get("http://localhost:8000/api/v2/admin/offers", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -108,7 +108,7 @@ export default {
       
           this.$http
             .delete(
-              "https://api4-datame.herokuapp.com/api/v2/admin/delete_offer/" + offer_id,
+              "http://localhost:8000/api/v2/admin/delete_offer/" + offer_id,
               {
                 headers: {
                   Authorization: token
