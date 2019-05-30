@@ -302,7 +302,7 @@ export default {
 
     var token = "JWT " + this.$cookies.get("token");
     this.$http
-      .get("http://localhost:8000/api/v1/offer", {
+      .get("https://api4-datame.herokuapp.com/api/v1/offer", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -363,8 +363,7 @@ export default {
         this.messages.push(this.$t("logo_error"));
       }
       if (this.form.confirmTerms == "not_accepted") {
-        console.log("Yes!");
-        this.messages.push(this.$("terms_error"));
+        this.messages.push(this.$t("terms_error"));
       }
       if (this.messages.length > 0) {
         this.modalShow = true;
@@ -384,7 +383,7 @@ export default {
           formData.append("photo", this.form.photo);
         }
         this.$http
-          .post("http://localhost:8000/api/v1/register", formData)
+          .post("https://api4-datame.herokuapp.com/api/v1/register", formData)
           .then(result => {
             this.registerMessage = this.$t('success_register')
             this.registered = true;
@@ -396,14 +395,14 @@ export default {
       formLogin.append("username", this.form.username);
       formLogin.append("password", this.form.password);
 
-      const baseURI = "http://localhost:8000/api/v1/login";
+      const baseURI = "https://api4-datame.herokuapp.com/api/v1/login";
       this.$http
-        .post("http://localhost:8000/api/v1/login", formLogin)
+        .post("https://api4-datame.herokuapp.com/api/v1/login", formLogin)
         .then(result => {
           this.$cookies.set("token", result.data.token);
           let token = `JWT ${this.$cookies.get("token")}`;
           this.$http
-            .get("http://localhost:8000/api/v1/whoami", {
+            .get("https://api4-datame.herokuapp.com/api/v1/whoami", {
               headers: { Authorization: token }
             })
             .then(result => {
