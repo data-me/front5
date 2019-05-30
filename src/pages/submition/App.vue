@@ -35,7 +35,7 @@
       <b-form @submit.prevent @submit="createReview">
         <label for="type">{{$t('score')}}</label>
         <br>
-        <b-form-input type="number" id="score" v-model="reviewForm.score" max="5" min="0"/>
+        <b-form-input type="number" id="score" v-model="reviewForm.score" max="5" min="0" required/>
         <label for="type">{{$t('comments')}}</label>
         <br>
         <b-form-textarea type="text" id="comments" v-model="reviewForm.comments"/>
@@ -103,6 +103,7 @@
                 class="mt-2"
                 variant="success"
                 block
+                :disabled="selected != $t('accepted') && selected != $t('rejected') "
                 @click="changeStatus(item.id)"
               >{{$t('change_status')}}</b-button>
             </b-form>
@@ -141,7 +142,7 @@ export default {
       user_type: this.$cookies.get("user_type"),
       submited: false,
       message: "",
-      selected: "Accepted",
+      selected: this.$t('accepted'),
       reviewPopup: false,
       reviewForm: {
         reviewedId: "",
