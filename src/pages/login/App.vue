@@ -59,7 +59,7 @@ export default {
       var username = this.form.username;
       var password = this.form.password;
 
-      const baseURI = "http://localhost:8000/api/v1/login";
+      const baseURI = "https://api5-datame.herokuapp.com/api/v1/login";
       this.$http
         .post(baseURI, {
           username: username,
@@ -73,7 +73,7 @@ export default {
           this.showNavbar = false;
           let token = `JWT ${this.$cookies.get("token")}`;
           this.$http
-            .get("http://localhost:8000/api/v1/whoami", {
+            .get("https://api5-datame.herokuapp.com/api/v1/whoami", {
               headers: { Authorization: token }
             })
             .then(result => {

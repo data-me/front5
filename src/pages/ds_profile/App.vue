@@ -42,7 +42,7 @@ export default {
 
     var token = "JWT " + this.$cookies.get("token");
     this.$http
-      .get(`http://localhost:8000/api/v1/cv?dataScientistId=${id_ds}`, {
+      .get(`https://api5-datame.herokuapp.com/api/v1/cv?dataScientistId=${id_ds}`, {
         headers: { Authorization: token }
       })
       .then(result => {

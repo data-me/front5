@@ -133,7 +133,7 @@ export default {
       }
       else{
         var token = 'JWT ' + this.$cookies.get('token')
-      const baseURI = 'http://localhost:8000/api/v1/item'
+      const baseURI = 'https://api5-datame.herokuapp.com/api/v1/item'
       const formData = new FormData();
       formData.append('name', this.item.name);
       formData.append('secid', Number(this.secid));

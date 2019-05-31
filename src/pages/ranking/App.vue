@@ -76,26 +76,26 @@ export default {
 
     var token = 'JWT ' + this.$cookies.get('token')
 /*
-    this.$http.get('http://localhost:8000/api/v3/reviews_companies',{ headers:
+    this.$http.get('https://api5-datame.herokuapp.com/api/v3/reviews_companies',{ headers:
       { Authorization: token }
       }).then((result) => {
         this.reviews_c = result.data
       })
 
-    this.$http.get('http://localhost:8000/api/v3/reviews_datascientists',{ headers:
+    this.$http.get('https://api5-datame.herokuapp.com/api/v3/reviews_datascientists',{ headers:
       { Authorization: token }
       }).then((result) => {
         this.reviews_d = result.data
       })
 */
-    this.$http.get('http://localhost:8000/api/v3/ranking_datascientists',{ headers:
+    this.$http.get('https://api5-datame.herokuapp.com/api/v3/ranking_datascientists',{ headers:
       { Authorization: token }
       }).then((result) => {
         this.rankingData = result.data
         this.itemsCargados1 = true
       })
 
-    this.$http.get('http://localhost:8000/api/v3/ranking_companies',{ headers:
+    this.$http.get('https://api5-datame.herokuapp.com/api/v3/ranking_companies',{ headers:
       { Authorization: token }
       }).then((result) => {
         this.rankingCompanies = result.data

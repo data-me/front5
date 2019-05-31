@@ -196,7 +196,7 @@ export default {
     }
 
     this.$http
-      .get("http://localhost:8000/api/v1/apply", {
+      .get("https://api5-datame.herokuapp.com/api/v1/apply", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -216,7 +216,7 @@ export default {
       var token = "JWT " + this.$cookies.get("token");
       this.$http
         .get(
-          "http://localhost:8000/api/v1/dataScientist?dataScientistId=" +
+          "https://api5-datame.herokuapp.com/api/v1/dataScientist?dataScientistId=" +
             this.idDataScientist,
           {
             headers: { Authorization: token }
@@ -234,7 +234,7 @@ export default {
         });
       this.$http
         .get(
-          "http://localhost:8000/api/v1/cv?dataScientistId=" +
+          "https://api5-datame.herokuapp.com/api/v1/cv?dataScientistId=" +
             this.idDataScientist,
           { headers: { Authorization: token } }
         )
@@ -266,7 +266,7 @@ export default {
         formData.append("file", this.submitForm.file);
         formData.append("offerId", this.idOffer);
         this.$http
-          .post("http://localhost:8000/api/v1/submit", formData, {
+          .post("https://api5-datame.herokuapp.com/api/v1/submit", formData, {
             headers: { Authorization: token }
           })
           .then(result => {

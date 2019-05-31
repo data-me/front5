@@ -30,7 +30,7 @@ export default {
       }
     }, mounted: function () {
     var token = 'JWT ' + this.$cookies.get('token')
-    this.$http.get('http://localhost:8000/api/v3/section_names_available',{ headers:
+    this.$http.get('https://api5-datame.herokuapp.com/api/v3/section_names_available',{ headers:
       { Authorization: token }
       }).then((result) => {
           for(var i = 0, size = result.data.length; i < size ; i++){
@@ -42,7 +42,7 @@ export default {
     onSubmit(evt) {
       evt.preventDefault()
         var token = 'JWT ' + this.$cookies.get('token')
-      const baseURI = 'http://localhost:8000/api/v1/section'
+      const baseURI = 'https://api5-datame.herokuapp.com/api/v1/section'
       const formData = new FormData();
       formData.append('name', this.section.name);
       this.$http.post(baseURI, formData, { headers: { Authorization: token }})

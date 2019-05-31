@@ -133,7 +133,7 @@ Vue.use(VueRouter)
        var token = 'JWT ' + this.$cookies.get('token')
        var formAccept = new FormData()
        formAccept.append('applyId', id)
-       this.$http.post('http://localhost:8000/api/v1/check_submition', formAccept, { headers:
+       this.$http.post('https://api5-datame.herokuapp.com/api/v1/check_submition', formAccept, { headers:
       { Authorization: token }
       }).then((result) => {
           this.permissions = String (result.data.message)
@@ -150,7 +150,7 @@ Vue.use(VueRouter)
     },
       getOffer(offerId){
     var token = 'JWT ' + this.$cookies.get('token')
-    this.$http.get('http://localhost:8000/api/v1/offer?offerId=' + offerId,{ headers:
+    this.$http.get('https://api5-datame.herokuapp.com/api/v1/offer?offerId=' + offerId,{ headers:
       { Authorization: token }
       }).then((result) => {
         this.offertodl = result.data,
@@ -173,7 +173,7 @@ Vue.use(VueRouter)
               var token = 'JWT ' + this.$cookies.get('token')
               var formAccept = new FormData()
               formAccept.append('idApply', id)
-              this.$http.post('http://localhost:8000/api/v1/accept', formAccept, { headers:
+              this.$http.post('https://api5-datame.herokuapp.com/api/v1/accept', formAccept, { headers:
               { Authorization: token }
               }).then((result) => {
                   this.$bvModal.msgBoxOk(this.$t('sucessful_acc_apply'), {
@@ -191,7 +191,7 @@ Vue.use(VueRouter)
          }).then(value => {
             if(value === true){
               var token = 'JWT ' + this.$cookies.get('token')
-              this.$http.delete('http://localhost:8000/api/v2/application/' + applicationId, { headers: { Authorization: token }}).then((result) => {
+              this.$http.delete('https://api5-datame.herokuapp.com/api/v2/application/' + applicationId, { headers: { Authorization: token }}).then((result) => {
                   if (result.data.code == '200') {
                     this.$bvModal.msgBoxOk(this.$t('delete_app_success'), {
                       okTitle:this.$t('accept')
@@ -218,7 +218,7 @@ Vue.use(VueRouter)
       var body = new FormData()
       body.append('description', this.applyDescription)
 
-       this.$http.post('http://localhost:8000/api/v2/application/' + this.applicationId, body, { headers:
+       this.$http.post('https://api5-datame.herokuapp.com/api/v2/application/' + this.applicationId, body, { headers:
         { Authorization: token }
         }).then((result) => {
             if (result.data.code == '200') {

@@ -128,7 +128,7 @@ export default {
 
     var token = "JWT " + this.$cookies.get("token");
     this.$http
-      .get("http://localhost:8000/api/v2/admin/offers", {
+      .get("https://api5-datame.herokuapp.com/api/v2/admin/offers", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -137,7 +137,7 @@ export default {
       });
 
     this.$http
-      .get("http://localhost:8000/api/v1/users", {
+      .get("https://api5-datame.herokuapp.com/api/v1/users", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -146,7 +146,7 @@ export default {
       });
 
     this.$http
-      .get("http://localhost:8000/api/v1/companies", {
+      .get("https://api5-datame.herokuapp.com/api/v1/companies", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -155,7 +155,7 @@ export default {
       });
 
     this.$http
-      .get("http://localhost:8000/api/v1/applications", {
+      .get("https://api5-datame.herokuapp.com/api/v1/applications", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -163,7 +163,7 @@ export default {
         this.applications = result.data;
       });
     this.$http
-      .get("http://localhost:8000/api/v1/applicationsAccepted", {
+      .get("https://api5-datame.herokuapp.com/api/v1/applicationsAccepted", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -171,14 +171,14 @@ export default {
         this.applicationsAccepted = result.data;
       });
     this.$http
-      .get("http://localhost:8000/api/v1/submitions", {
+      .get("https://api5-datame.herokuapp.com/api/v1/submitions", {
         headers: { Authorization: token }
       })
       .then(result => {
         this.submitions = result.data;
       });
     this.$http
-      .get("http://localhost:8000/api/v1/messages", {
+      .get("https://api5-datame.herokuapp.com/api/v1/messages", {
         headers: { Authorization: token }
       })
       .then(result => {

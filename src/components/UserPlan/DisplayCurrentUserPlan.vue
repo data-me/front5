@@ -18,7 +18,7 @@ export default {
     },
     mounted: function(){
         var token = 'JWT ' + this.$cookies.get('token')
-        this.$http.get('http://localhost:8000/api/v2/currentUserPlan',{ headers:
+        this.$http.get('https://api5-datame.herokuapp.com/api/v2/currentUserPlan',{ headers:
         { Authorization: token }
             }).then((result) => {
                 this.userPlan = result.data
