@@ -302,7 +302,7 @@ export default {
 
     var token = "JWT " + this.$cookies.get("token");
     this.$http
-      .get("https://api4-datame.herokuapp.com/api/v1/offer", {
+      .get("https://api5-datame.herokuapp.com/api/v1/offer", {
         headers: { Authorization: token }
       })
       .then(result => {
@@ -383,7 +383,7 @@ export default {
           formData.append("photo", this.form.photo);
         }
         this.$http
-          .post("https://api4-datame.herokuapp.com/api/v1/register", formData)
+          .post("https://api5-datame.herokuapp.com/api/v1/register", formData)
           .then(result => {
             this.registerMessage = this.$t('success_register')
             this.registered = true;
@@ -395,14 +395,14 @@ export default {
       formLogin.append("username", this.form.username);
       formLogin.append("password", this.form.password);
 
-      const baseURI = "https://api4-datame.herokuapp.com/api/v1/login";
+      const baseURI = "https://api5-datame.herokuapp.com/api/v1/login";
       this.$http
-        .post("https://api4-datame.herokuapp.com/api/v1/login", formLogin)
+        .post("https://api5-datame.herokuapp.com/api/v1/login", formLogin)
         .then(result => {
           this.$cookies.set("token", result.data.token);
           let token = `JWT ${this.$cookies.get("token")}`;
           this.$http
-            .get("https://api4-datame.herokuapp.com/api/v1/whoami", {
+            .get("https://api5-datame.herokuapp.com/api/v1/whoami", {
               headers: { Authorization: token }
             })
             .then(result => {
